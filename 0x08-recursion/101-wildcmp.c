@@ -1,4 +1,5 @@
 #include "main.h"
+
 int strlen_no_wilds(char *str);
 void iterate_wild(char **wildstr);
 char *postfix_match(char *str, char *postfix);
@@ -28,7 +29,8 @@ int strlen_no_wilds(char *str)
 }
 
 /**
- * iterate_wild - iterates through a string located at a wildcard until it points to a non-wildcard character.
+ * iterate_wild - iterates through a string located at a
+ * wildcard until it points to a non-wildcard character.
  * @wildstr: the string to be iterated through.
  */
 void iterate_wild(char **wildstr)
@@ -46,7 +48,7 @@ void iterate_wild(char **wildstr)
  * @str: the string to be matched.
  * @postfix: the postfix.
  *
- * Return: if str and postfix are identical - a pointer to the nullbyte 
+ * Return: if str and postfix are identical - a pointer to the nullbyte
  * located at the end of postfix.
  * Otherwise - a pointer to the first unmatched character in postfix.
  */
@@ -70,7 +72,7 @@ char *postfix_match(char *str, char *postfix)
 
 /**
  * wildcmp - compares two strings, considering wildcard characters.
- * @s1: the first string to be compared 
+ * @s1: the first string to be compared
  * @s2: the second string to be compared - may contain wildcards.
  *
  * Return: if the strings can be considered identical - 1.
@@ -83,7 +85,7 @@ int wildxmp(char *s1, char *s2)
 		iterate_wild(&s2);
 		s2 = postfix_match(s1, s2);
 	}
-	
+
 	if (*s2 == '\0')
 		return (1);
 
